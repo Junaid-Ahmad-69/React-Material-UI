@@ -3,13 +3,17 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import SaveIcon from '@mui/icons-material/Save';
-import {ButtonGroup, IconButton, Stack, styled} from "@mui/material";
+import {Box, ButtonGroup, IconButton, Stack, styled, useTheme} from "@mui/material";
 import AlarmIcon from "@mui/icons-material/Alarm";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import {purple} from "@mui/material/colors";
 import {LoadingButton} from "@mui/lab";
 
 const ButtonUsage = () => {
+    const responsiveTheme = useTheme();
+    const { breakpoints } = responsiveTheme;
+        const { xs, sm, md, lg, xl } = breakpoints.values;
+
 
     const VisuallyHiddenInput = styled('input')({
         clip: 'rect(0 0 0 0)',
@@ -33,10 +37,11 @@ const ButtonUsage = () => {
     }));
 
     return (
-        <>
+        <Box sx={{maxWidth: 1200, mx: "auto"}}>
+            <h1 style={{margin: "30px auto 30px auto", textAlign: "center"}}>Buttons & Buttons Group</h1>
             {/*OutlineButton*/}
-            <Stack direction="row" spacing={10} sx={{margin: 4}}>
-                <Button variant="outlined">Outline Button</Button>
+            <Stack direction="row" spacing={4} sx={{margin: 4}}>
+                <Button variant="outlined" sx={{xs}}>Outline Button</Button>
                 {/*Text*/}
                 <Button variant="text">text Button </Button>
                 {/*Container Button*/}
@@ -133,7 +138,7 @@ const ButtonUsage = () => {
                 </ButtonGroup>
             </Stack>
 
-        </>
+        </Box>
     )
 }
 

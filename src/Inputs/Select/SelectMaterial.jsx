@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, MenuItem, Select} from "@mui/material";
+import { Box, FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 import {useState} from "react";
 
 const SelectMaterial = () => {
@@ -7,7 +7,8 @@ const SelectMaterial = () => {
         setAge(e.target.value)
     }
     return (
-        <div style={{marginTop: "80px"}}>
+        <Box sx={{maxWidth: 1200, mx: "auto"}}>
+            <h1 style={{margin: "30px auto 30px auto", textAlign: "center"}}>Select From Group</h1>
             <FormControl sx={{minWidth: 120}}>
                 <InputLabel id="select-demo">Age</InputLabel>
                 <Select labelId="select-demo" value={age} onChange={handlerChange}>
@@ -16,7 +17,7 @@ const SelectMaterial = () => {
                     <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
             </FormControl>
-        </div>
+        </Box>
     )
 }
 

@@ -8,7 +8,8 @@ import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 
 export const CheckBoxMaterial = () => {
     return (
-        <>
+        <Box sx={{maxWidth: 1200, mx: "auto"}}>
+                <h1 style={{margin: "30px auto 30px auto", textAlign: "center"}}>CheckBox</h1>
             <Stack direction="row" spacing={4}>
                 <CheckBox defaultChecked/>
                 <CheckBox disabled checked/>
@@ -47,8 +48,6 @@ export const CheckBoxMaterial = () => {
                     </FormControl>
                 </Box>
             </Container>
-
-
-        </>
+        </Box>
     )
 }
